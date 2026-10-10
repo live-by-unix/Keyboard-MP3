@@ -235,4 +235,4 @@ echo "Help: keyboard-mp3 --help"
 echo "Note: macOS may require Accessibility and/or Input Monitoring permission for your terminal app."
 echo "Note: Linux may fail as well. Check X11/WayLand config & more."
 echo
-echo"By live-by-unix"
+echo "By live-by-unix"
