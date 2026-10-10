@@ -22,7 +22,7 @@ A small macOS/Linux terminal utility that plays an MP3 sound whenever a keyboard
 
 ## Installation
 
-Download `install-keyboard-mp3.sh`, then run it from Terminal. If it is in your Downloads folder:
+Download `install-keyboard-mp3.sh` from the repo, then run it from Terminal. If it is in your Downloads folder:
 
 ```bash
 bash ~/Downloads/install-keyboard-mp3.sh
