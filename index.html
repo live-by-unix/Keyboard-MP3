@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0d12">
+  <meta name="description" content="Keyboard-MP3 is a lightweight macOS and Linux terminal utility that plays an MP3 whenever you press a key.">
+  <meta property="og:title" content="Keyboard-MP3 — Give every keystroke a sound">
+  <meta property="og:description" content="A tiny Bash utility for keyboard sound effects on macOS and Linux.">
+  <meta property="og:type" content="website">
+  <title>Keyboard-MP3 — Sound on every keystroke</title>
+  <style>
+    :root{color-scheme:dark;--bg:#0b0d12;--panel:#11151d;--panel2:#161b25;--line:#272e3b;--text:#f4f6fb;--muted:#a1aabc;--lime:#c5f36b;--cyan:#79e4d2;--pink:#ff8ca8;--radius:20px;--max:1160px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:88px}body{margin:0;background:radial-gradient(ellipse at 75% -10%,#263323 0,transparent 34%),radial-gradient(ellipse at 0% 30%,#182238 0,transparent 28%),var(--bg);color:var(--text);font:16px/1.65 ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:inherit;text-decoration:none}button,a{ -webkit-tap-highlight-color:transparent}button{font:inherit}.wrap{width:min(var(--max),calc(100% - 40px));margin:auto}.topbar{position:sticky;top:0;z-index:20;border-bottom:1px solid #ffffff12;background:#0b0d12d9;backdrop-filter:blur(18px)}.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:-.04em}.brand-icon{width:34px;height:34px;border-radius:10px;background:var(--lime);color:#10130b;display:grid;place-items:center;font-weight:900;box-shadow:0 0 30px #c5f36b25}.navlinks{display:flex;align-items:center;gap:26px;color:var(--muted);font-size:14px}.navlinks a:hover,.textlink:hover{color:var(--lime)}.nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:1px solid var(--line);border-radius:12px;padding:11px 16px;font-weight:750;font-size:14px;transition:transform .18s,border-color .18s,background .18s}.nav-cta{background:#ffffff06}.btn:hover,.nav-cta:hover{transform:translateY(-2px);border-color:#68744f}.btn-primary{background:var(--lime);color:#10130b;border-color:var(--lime)}.btn-primary:hover{background:#d5ff88}.btn-secondary{background:#ffffff07}.hero{padding:88px 0 74px}.hero-grid{display:grid;grid-template-columns:1.03fr .97fr;align-items:center;gap:58px}.eyebrow{display:inline-flex;align-items:center;gap:9px;border:1px solid #c5f36b35;border-radius:99px;padding:6px 11px;color:var(--lime);font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}.dot{width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 12px var(--lime)}h1{font-size:clamp(48px,6.2vw,76px);line-height:1.02;letter-spacing:-.075em;margin:24px 0 22px;max-width:700px}h1 span{color:var(--lime)}.lead{font-size:18px;line-height:1.7;color:var(--muted);max-width:590px}.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:29px}.hero-meta{display:flex;flex-wrap:wrap;gap:18px;margin-top:25px;color:var(--muted);font-size:13px}.hero-meta span{display:flex;align-items:center;gap:7px}.hero-meta b{color:var(--text);font-weight:650}.terminal{border:1px solid #343d4d;border-radius:20px;overflow:hidden;background:#0d1016;box-shadow:0 30px 100px #0008,0 0 0 8px #ffffff03;transform:rotate(1deg)}.term-head{height:48px;display:flex;align-items:center;gap:7px;padding:0 16px;border-bottom:1px solid #ffffff12;background:#141923}.traffic{width:9px;height:9px;border-radius:50%;background:#ff6b6b}.traffic:nth-child(2){background:#ffd166}.traffic:nth-child(3){background:#72d69b}.term-title{margin:auto;color:#828da0;font-size:12px;margin-left:10px}.term-body{padding:24px 23px 25px;font:13px/1.9 ui-monospace,SFMono-Regular,Menlo,monospace;color:#aab4c5}.term-line{white-space:pre-wrap;overflow-wrap:anywhere}.prompt{color:var(--lime)}.cmd{color:#f5f7fb}.comment{color:#677387}.term-output{color:var(--cyan)}.term-spacer{height:10px}.fake-status{display:flex;align-items:center;gap:9px;border:1px solid #c5f36b30;background:#c5f36b0a;padding:12px 13px;border-radius:10px;margin-top:15px;font:12px ui-monospace,monospace;color:#d9e4ce}.fake-status i{display:block;width:7px;height:7px;background:var(--lime);border-radius:50%}.section{padding:80px 0}.section-head{max-width:690px;margin-bottom:34px}.kicker{color:var(--lime);font:800 12px ui-monospace,monospace;text-transform:uppercase;letter-spacing:.13em}.section h2{font-size:clamp(32px,4vw,48px);letter-spacing:-.06em;line-height:1.1;margin:12px 0}.section-head p{color:var(--muted);margin:14px 0 0}.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{border:1px solid var(--line);border-radius:var(--radius);padding:24px;background:linear-gradient(145deg,#171c26,#10131a);min-width:0}.feature-icon{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;background:#c5f36b12;color:var(--lime);font-size:20px;margin-bottom:19px}.card h3{margin:0 0 8px;font-size:18px;letter-spacing:-.025em}.card p{margin:0;color:var(--muted);font-size:14px}.split{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch}.surface{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:28px}.surface h3{margin:0 0 12px;font-size:22px;letter-spacing:-.04em}.surface p{color:var(--muted);font-size:14px}.checklist{padding:0;margin:18px 0 0;list-style:none;display:grid;gap:12px}.checklist li{display:flex;gap:10px;color:#d9deea;font-size:14px}.check{color:var(--lime);font-weight:900}.warn{border:1px solid #ffca743d;background:#ffca740a;border-radius:14px;padding:15px 17px;color:#e8d7b8;font-size:13px;margin-top:17px}.warn strong{color:#ffd18a}.command-layout{display:grid;grid-template-columns:.7fr 1.3fr;gap:22px}.command-list{display:grid;gap:8px}.command-tab{cursor:pointer;text-align:left;border:1px solid var(--line);background:#11151d;border-radius:12px;padding:12px 14px;color:var(--muted);display:flex;justify-content:space-between;align-items:center}.command-tab.active{border-color:#c5f36b70;background:#c5f36b0d;color:var(--text)}.command-tab code{font:13px ui-monospace,monospace;color:var(--lime)}.command-detail{min-height:280px}.command-detail p{color:var(--muted)}.codebox{position:relative;background:#080a0f;border:1px solid #28303d;border-radius:13px;padding:18px 52px 18px 18px;margin-top:17px;overflow:auto}.codebox code{font:13px/1.8 ui-monospace,SFMono-Regular,Menlo,monospace;color:#dfe6f3;white-space:pre}.copy{position:absolute;right:9px;top:9px;border:1px solid #333c4c;background:#171c25;color:#dfe6f3;border-radius:8px;padding:6px 9px;font-size:11px;cursor:pointer}.copy:hover{border-color:var(--lime)}.install-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.install-card{border:1px solid var(--line);background:#11151d;border-radius:18px;padding:22px}.install-card h3{margin:0 0 5px}.install-card p{color:var(--muted);font-size:13px;margin:0 0 14px}.steps{counter-reset:step;list-style:none;padding:0;display:grid;gap:12px}.steps li{counter-increment:step;display:flex;gap:12px;color:#c8d0df;font-size:14px}.steps li:before{content:counter(step);flex:0 0 25px;height:25px;display:grid;place-items:center;border-radius:8px;background:#c5f36b16;color:var(--lime);font-size:12px;font-weight:800}.platforms{display:flex;gap:8px;flex-wrap:wrap;margin-top:17px}.platform{font-size:12px;border:1px solid var(--line);padding:6px 10px;border-radius:99px;color:#c5ccda}.faq{display:grid;grid-template-columns:1fr 1fr;gap:12px}.faq details{border:1px solid var(--line);border-radius:14px;background:#11151d;padding:17px 18px}.faq summary{cursor:pointer;font-weight:750;font-size:14px}.faq details p{color:var(--muted);font-size:13px;margin-bottom:0}.cta{border:1px solid #c5f36b38;border-radius:24px;padding:36px;background:radial-gradient(ellipse at 90% 10%,#c5f36b14,transparent 45%),#11151d;display:flex;align-items:center;justify-content:space-between;gap:25px}.cta h2{margin:0;font-size:clamp(28px,4vw,40px);letter-spacing:-.06em}.cta p{margin:9px 0 0;color:var(--muted);font-size:14px}.footer{padding:32px 0 42px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:18px}.footer-links{display:flex;gap:18px;flex-wrap:wrap}.footer a:hover{color:var(--lime)}.small-note{font-size:12px;color:#7f8a9e;margin-top:14px}.mobile-menu{display:none}
+    @media(max-width:850px){.hero-grid{grid-template-columns:1fr;gap:38px}.hero{padding-top:62px}.terminal{transform:none;max-width:650px}.feature-grid{grid-template-columns:repeat(2,1fr)}.command-layout{grid-template-columns:1fr}.command-list{grid-template-columns:repeat(2,1fr)}.command-detail{min-height:0}.navlinks{gap:14px}.split{gap:12px}}
+    @media(max-width:600px){.wrap{width:min(100% - 28px,var(--max))}.nav{height:62px}.navlinks a:not(.nav-cta){display:none}.nav-cta{padding:9px 11px}.hero{padding:48px 0 52px}h1{font-size:49px}.lead{font-size:16px}.hero-meta{gap:10px 15px}.section{padding:58px 0}.feature-grid,.split,.install-grid,.faq{grid-template-columns:1fr}.card,.surface{padding:21px}.command-list{grid-template-columns:1fr 1fr}.command-tab{font-size:12px;padding:10px}.command-tab code{font-size:11px}.cta{align-items:flex-start;flex-direction:column;padding:25px}.footer-inner{align-items:flex-start;flex-direction:column}.term-body{padding:18px 14px;font-size:11px}.term-title{font-size:10px}.hero-actions .btn{flex:1}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+  </style>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Keyboard-MP3 home"><span class="brand-icon">⌁</span><span>keyboard-mp3</span></a>
+    <nav class="navlinks" aria-label="Main navigation">
+      <a href="#features">Features</a><a href="#install">Install</a><a href="#commands">Commands</a><a href="#faq">FAQ</a>
+      <a class="nav-cta" href="https://github.com/live-by-unix/Keyboard-MP3" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a>
+    </nav>
+  </div>
+</header>
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> Tiny utility · Version 1.0.0</div>
+        <h1>Give every<br>keystroke a <span>sound.</span></h1>
+        <p class="lead">A small Bash-powered utility that plays your chosen MP3 whenever you press a key. Set it up once, control it from your terminal, and let the clicks begin.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#install">Get started <span aria-hidden="true">→</span></a>
+          <a class="btn btn-secondary" href="https://github.com/live-by-unix/Keyboard-MP3" target="_blank" rel="noopener noreferrer">⌘ View source</a>
+        </div>
+        <div class="hero-meta"><span>✓ <b>macOS + Linux</b></span><span>✓ <b>MP3 playback</b></span><span>✓ <b>Terminal-first</b></span></div>
+      </div>
+      <div class="terminal" aria-label="Illustrative terminal showing keyboard-mp3 commands">
+        <div class="term-head"><i class="traffic"></i><i class="traffic"></i><i class="traffic"></i><span class="term-title">Terminal — keyboard-mp3</span></div>
+        <div class="term-body">
+          <div class="term-line"><span class="prompt">you@machine</span> <span class="comment">~</span> $ <span class="cmd">keyboard-mp3 change "$HOME/Music/keyboard.mp3"</span></div>
+          <div class="term-line term-output">Sound file set to: /home/you/Music/keyboard.mp3</div>
+          <div class="term-spacer"></div>
+          <div class="term-line"><span class="prompt">you@machine</span> <span class="comment">~</span> $ <span class="cmd">keyboard-mp3 on</span></div>
+          <div class="term-line term-output">Keyboard sound started.</div>
+          <div class="term-line term-output">MP3: /home/you/Music/keyboard.mp3</div>
+          <div class="term-spacer"></div>
+          <div class="term-line"><span class="prompt">you@machine</span> <span class="comment">~</span> $ <span class="cmd">keyboard-mp3 status</span></div>
+          <div class="fake-status"><i></i> LISTENER STATUS: RUNNING <span style="margin-left:auto;color:#7d899d">PID 4821</span></div>
+          <div class="term-line comment" style="margin-top:13px"># Terminal preview for illustration — not a live system.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="features">
+    <div class="wrap">
+      <div class="section-head"><div class="kicker">Small tool, simple workflow</div><h2>Your keyboard.<br>Your sound.</h2><p>Keyboard-MP3 keeps the workflow straightforward: configure a file, start the background listener, and manage it with a few memorable commands.</p></div>
+      <div class="feature-grid">
+        <article class="card"><div class="feature-icon">⌨</div><h3>Global key listening</h3><p>Uses Python's <code>pynput</code> listener to react to key presses outside the terminal when the operating system permits it.</p></article>
+        <article class="card"><div class="feature-icon">♫</div><h3>Your MP3, on repeat</h3><p>Choose an existing MP3 file and use it as the sound played when a key is pressed. Playback is handled by <code>pygame</code>.</p></article>
+        <article class="card"><div class="feature-icon">◉</div><h3>Runs in the background</h3><p>Start the listener from your shell and keep using other applications. Stop it when you want quiet again.</p></article>
+        <article class="card"><div class="feature-icon">⇄</div><h3>Change sounds quickly</h3><p>Point the utility to another sound file from the terminal. If the listener is running, the CLI attempts to restart it.</p></article>
+        <article class="card"><div class="feature-icon">⌘</div><h3>Terminal-native controls</h3><p>No large control panel to navigate. Use <code>on</code>, <code>off</code>, <code>status</code>, and <code>change</code>.</p></article>
+        <article class="card"><div class="feature-icon">▤</div><h3>Local configuration</h3><p>The utility stores its sound path, helper, virtual environment, PID file, and log under your home directory.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="platforms">
+    <div class="wrap">
+      <div class="section-head"><div class="kicker">Know before you run it</div><h2>Designed for macOS and Linux.</h2><p>The command-line interface is Bash-based and the listener is Python-based. Global keyboard monitoring depends on your desktop session and operating-system permissions.</p></div>
+      <div class="split">
+        <article class="surface">
+          <h3> macOS</h3><p>macOS may ask you to grant your terminal application permission to observe keyboard input.</p>
+          <ul class="checklist"><li><span class="check">✓</span><span>Check <b>System Settings → Privacy &amp; Security → Accessibility</b>.</span></li><li><span class="check">✓</span><span>If needed, also check <b>Input Monitoring</b>.</span></li><li><span class="check">✓</span><span>Quit and reopen the terminal, then restart the listener.</span></li></ul>
+        </article>
+        <article class="surface">
+          <h3>🐧 Linux</h3><p>Support varies by desktop environment, display server, and input-device permissions.</p>
+          <ul class="checklist"><li><span class="check">✓</span><span>Check your session type with <code>echo "$XDG_SESSION_TYPE"</code>.</span></li><li><span class="check">✓</span><span>X11 is generally more permissive for global key listeners.</span></li><li><span class="check">✓</span><span>Wayland commonly restricts global keyboard monitoring; <code>pynput</code> may not detect keys in other apps.</span></li></ul>
+        </article>
+      </div>
+      <div class="warn"><strong>Important:</strong> This utility listens for global key-press events and does not intentionally block or change normal keyboard input. Only install and run it on a computer you control. Avoid running it as root just to bypass input permissions.</div>
+    </div>
+  </section>
+
+  <section class="section" id="install">
+    <div class="wrap">
+      <div class="section-head"><div class="kicker">Get up and running</div><h2>Install once. Control from anywhere.</h2><p>Download the installer from the repository, run it from a terminal, then set the sound file you want to use.</p></div>
+      <div class="install-grid">
+        <article class="install-card"><h3>01 / Install</h3><p>Requires Python 3 and a working Python virtual-environment setup.</p><div class="codebox"><code>bash ~/Downloads/install-keyboard-mp3.sh</code><button class="copy" data-copy="bash ~/Downloads/install-keyboard-mp3.sh">Copy</button></div></article>
+        <article class="install-card"><h3>02 / Configure</h3><p>Replace the example with the full path to an existing MP3 file.</p><div class="codebox"><code>export PATH="$HOME/bin:$PATH"
+keyboard-mp3 change "$HOME/Music/keyboard.mp3"</code><button class="copy" data-copy='export PATH="$HOME/bin:$PATH"
+keyboard-mp3 change "$HOME/Music/keyboard.mp3"'>Copy</button></div></article>
+        <article class="install-card"><h3>03 / Start listening</h3><p>Start the listener and type in another application to test it.</p><div class="codebox"><code>keyboard-mp3 on</code><button class="copy" data-copy="keyboard-mp3 on">Copy</button></div></article>
+        <article class="install-card"><h3>04 / Stop when needed</h3><p>Turn the sound off or check whether the listener is running.</p><div class="codebox"><code>keyboard-mp3 status
+keyboard-mp3 off</code><button class="copy" data-copy="keyboard-mp3 status
+keyboard-mp3 off">Copy</button></div></article>
+      </div>
+      <p class="small-note">Linux note: on Debian/Ubuntu, you may need system packages for Python venv/build dependencies or audio libraries if pip cannot install a dependency. Package requirements vary by system.</p>
+    </div>
+  </section>
+
+  <section class="section" id="commands">
+    <div class="wrap">
+      <div class="section-head"><div class="kicker">Command reference</div><h2>One command at a time.</h2><p>Select a command to see what it does and copy an example.</p></div>
+      <div class="command-layout">
+        <div class="command-list" role="tablist" aria-label="Keyboard-MP3 commands">
+          <button class="command-tab active" role="tab" aria-selected="true" data-command="on"><code>on</code><span>Start →</span></button>
+          <button class="command-tab" role="tab" aria-selected="false" data-command="off"><code>off</code><span>Stop →</span></button>
+          <button class="command-tab" role="tab" aria-selected="false" data-command="status"><code>status</code><span>Inspect →</span></button>
+          <button class="command-tab" role="tab" aria-selected="false" data-command="change"><code>change</code><span>Configure →</span></button>
+          <button class="command-tab" role="tab" aria-selected="false" data-command="help"><code>--help</code><span>Help →</span></button>
+          <button class="command-tab" role="tab" aria-selected="false" data-command="version"><code>--version</code><span>Version →</span></button>
+        </div>
+        <article class="surface command-detail" id="command-detail" role="tabpanel" aria-live="polite">
+          <div class="kicker">COMMAND / ON</div><h3>Start the listener</h3><p>Launches the keyboard listener in the background using the currently configured sound file. If a listener is already running, the CLI reports that state.</p>
+          <div class="codebox"><code id="command-code">keyboard-mp3 on</code><button class="copy" id="command-copy" data-copy="keyboard-mp3 on">Copy</button></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="files">
+    <div class="wrap">
+      <div class="section-head"><div class="kicker">Under the hood</div><h2>Local files. Easy to inspect.</h2><p>Keyboard-MP3 keeps its helper, environment, configuration, and runtime log in predictable locations under your home directory.</p></div>
+      <div class="surface">
+        <ul class="checklist">
+          <li><span class="check">▸</span><span><code>~/bin/keyboard-mp3</code> — Bash command-line interface</span></li>
+          <li><span class="check">▸</span><span><code>~/.local/share/keyboard-mp3/listener.py</code> — Python listener and audio helper</span></li>
+          <li><span class="check">▸</span><span><code>~/.local/share/keyboard-mp3/venv/</code> — Python virtual environment and dependencies</span></li>
+          <li><span class="check">▸</span><span><code>~/.local/share/keyboard-mp3/sound-path</code> — Configured sound-file path</span></li>
+          <li><span class="check">▸</span><span><code>~/.local/share/keyboard-mp3/listener.pid</code> — Background process ID file</span></li>
+          <li><span class="check">▸</span><span><code>~/.local/share/keyboard-mp3/listener.log</code> — Listener output and error log</span></li>
+        </ul>
+        <div class="codebox"><code>cat ~/.local/share/keyboard-mp3/listener.log</code><button class="copy" data-copy="cat ~/.local/share/keyboard-mp3/listener.log">Copy</button></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="wrap">
+      <div class="section-head"><div class="kicker">Troubleshooting</div><h2>Something not clicking?</h2><p>Start with these common fixes before digging into the log.</p></div>
+      <div class="faq">
+        <details><summary>Why does `keyboard-mp3` say command not found?</summary><p>Ensure <code>~/bin</code> is on your PATH: run <code>export PATH="$HOME/bin:$PATH"</code>. Open a new terminal or source the relevant shell startup file afterward.</p></details>
+        <details><summary>Why are no key presses detected?</summary><p>On macOS, review Accessibility and Input Monitoring permissions. On Linux, check whether your session uses X11 or Wayland; Wayland may prevent global monitoring.</p></details>
+        <details><summary>Why is there no sound?</summary><p>Confirm the configured file exists, check system output volume, and inspect <code>~/.local/share/keyboard-mp3/listener.log</code> for audio or MP3-loading errors.</p></details>
+        <details><summary>Can I use a path containing spaces?</summary><p>Yes. Quote the path, for example: <code>keyboard-mp3 change "$HOME/Music/My Keyboard Sound.mp3"</code>.</p></details>
+        <details><summary>Does the website itself listen to my keyboard?</summary><p>No. This is a documentation and demo site. It cannot install or control the native Python listener on your computer.</p></details>
+        <details><summary>How do I uninstall it?</summary><p>Run <code>keyboard-mp3 off</code>, then remove <code>~/bin/keyboard-mp3</code> and <code>~/.local/share/keyboard-mp3</code>. Remove the PATH line from your shell startup file if you no longer need it.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="cta">
+        <div><div class="kicker">Open source · Version 1.0.0</div><h2>Ready to make some noise?</h2><p>Explore the source, read the README, or contribute improvements on GitHub.</p></div>
+        <a class="btn btn-primary" href="https://github.com/live-by-unix/Keyboard-MP3" target="_blank" rel="noopener noreferrer">Explore the repository ↗</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div>© <span id="year"></span> <a href="https://github.com/live-by-unix" target="_blank" rel="noopener noreferrer">live-by-unix</a> · Keyboard-MP3</div>
+    <div class="footer-links"><a href="https://github.com/live-by-unix/Keyboard-MP3" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://github.com/live-by-unix/Keyboard-MP3/blob/main/README.md" target="_blank" rel="noopener noreferrer">README</a><a href="https://github.com/live-by-unix/Keyboard-MP3/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">BSD-3-Clause License</a></div>
+  </div>
+</footer>
+<script>
+  const commands = {
+    on:{label:"COMMAND / ON",title:"Start the listener",description:"Launches the keyboard listener in the background using the currently configured sound file. If a listener is already running, the CLI reports that state.",code:"keyboard-mp3 on"},
+    off:{label:"COMMAND / OFF",title:"Stop the listener",description:"Stops the background keyboard listener. Use this whenever you want to silence the utility.",code:"keyboard-mp3 off"},
+    status:{label:"COMMAND / STATUS",title:"Check the current state",description:"Reports whether the listener appears to be running and prints the configured sound path when available.",code:"keyboard-mp3 status"},
+    change:{label:"COMMAND / CHANGE",title:"Choose another MP3",description:"Saves a new sound-file path. If the listener is already running, the current script attempts to stop and restart it with the new file.",code:'keyboard-mp3 change "$HOME/Music/keyboard.mp3"'},
+    help:{label:"COMMAND / HELP",title:"Show built-in help",description:"Displays the usage summary, available commands, and examples directly in your terminal.",code:"keyboard-mp3 --help"},
+    version:{label:"COMMAND / VERSION",title:"Check the version",description:"Prints the utility's current version string.",code:"keyboard-mp3 --version"}
+  };
+  const tabs=[...document.querySelectorAll(".command-tab")], detail=document.getElementById("command-detail");
+  tabs.forEach(tab=>tab.addEventListener("click",()=>{
+    const item=commands[tab.dataset.command];
+    tabs.forEach(t=>{const active=t===tab;t.classList.toggle("active",active);t.setAttribute("aria-selected",String(active))});
+    detail.querySelector(".kicker").textContent=item.label;
+    detail.querySelector("h3").textContent=item.title;
+    detail.querySelector("p").textContent=item.description;
+    document.getElementById("command-code").textContent=item.code;
+    document.getElementById("command-copy").dataset.copy=item.code;
+  }));
+  document.addEventListener("click",async event=>{
+    const button=event.target.closest("[data-copy]");
+    if(!button)return;
+    const value=button.dataset.copy;
+    try{
+      await navigator.clipboard.writeText(value);
+      const old=button.textContent;button.textContent="Copied!";
+      setTimeout(()=>button.textContent=old,1300);
+    }catch{
+      const area=document.createElement("textarea");area.value=value;area.style.position="fixed";area.style.opacity="0";document.body.appendChild(area);area.select();
+      try{document.execCommand("copy");button.textContent="Copied!";setTimeout(()=>button.textContent="Copy",1300)}catch{button.textContent="Select text"}
+      area.remove();
+    }
+  });
+  document.getElementById("year").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
